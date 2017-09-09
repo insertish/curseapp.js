@@ -22,11 +22,11 @@ app.on('connected', () => {
 });
 
 app.on('dropped', () => {
-    consolle.log('Connection dropped!');
+    console.log('Connection dropped!');
 });
 
 app.on('message', (msg) => {
     if (msg.content=='ping')
         msg.reply('pong!');
-})
+});
 ```
