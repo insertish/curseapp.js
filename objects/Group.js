@@ -4,8 +4,10 @@ module.exports = class Group {
 	constructor(Client, RootConversationID) {
 		this._Client = Client;
 		this.id = RootConversationID;
+		this.synced = false;
 	}
 	sync(callback) {
+		if (this.synced) return callback();
 		Endpoints.Groups.groups.get(this._Client, this.id).then(data => {
 			this.syncRaw(data);
 			callback();
@@ -14,6 +16,7 @@ module.exports = class Group {
 		});
 	}
 	syncRaw(data) {
+		this.synced = true;
 		this.title = data.GroupTitle;
 		this.isPublic = data.IsPublic;
 		this.inviteURL = data.UrlHost + data.UrlPath;

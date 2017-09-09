@@ -5,10 +5,17 @@ module.exports = class Channel {
 		this._Client = Client;
 		this.id = ConversationID;
 		this.isDM = isDM;
-		if (!isDM) this.group = new Group(Client, RootConversationID);
+		if (!isDM) {
+			if (Client.groups.has(RootConversationID)) {
+				this.group = Client.groups.get(RootConversationID);
+			} else {
+				this.group = new Group(Client, RootConversationID);
+			}
+		}
 	}
 	sync(callback) {
 		if (!this.isDM) this.group.sync(callback);
+		else callback();
 	}
 	send(data) {
 		return new Promise((resolve, reject) => {
