@@ -1,0 +1,24 @@
+{
+  "name": "curseapp.js",
+  "version": "1.0.0",
+  "description": "curseapp.js is a 100% promise based, Object-oriented wrapper for the CurseApp API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcrocks999/curseapp.js.git"
+  },
+  "author": "Insertish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcrocks999/curseapp.js/issues"
+  },
+  "homepage": "https://github.com/mcrocks999/curseapp.js#readme",
+  "dependencies": {
+    "request": "^2.81.0",
+    "ws": "^3.1.0"
+  },
+  "devDependencies": {}
+}
