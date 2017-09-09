@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.1/css/bulma.min.css" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	</head>
+	<body>
+		<section class="hero is-dark">
+			<div class="hero-head">
+				<header class="nav">
+					<div class="container">
+						<div class="nav-left">
+							<a class="nav-item" style="background-color:#B200FF;">
+								curseapp.js
+							</a>
+						</div>
+						<span class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('is-active')">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+						<div class="nav-right nav-menu">
+							<span class="nav-item">
+								<a href="https://www.npmjs.org/package/curseapp.js">NPM</a>
+							</span>
+							<span class="nav-item">
+								<a href="https://github.com/mcrocks999/curseapp.js">GitHub</a>
+							</span>
+						</div>
+					</div>
+				</header>
+			</div>
+			<div class="hero-body" style="background-color:#B200FF;text-align:center;">
+				<img src="images/logo.png" style="display:block;margin:0 auto;"></img>
+				<code>npm install --save curseapp.js</code>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="columns">
+					<div class="column">
+						<h2 class="title is-2">About</h2>
+						<p>curseapp.js is a 100% promise based, Object-oriented wrapper for the CurseApp API.</p><br/>
+						<p>It currently offers a wide support for general bot applications, and is still constantly been developed and recieving new features and more easy access to other parts of the CurseApp API.</p></br>
+						<p><a href="https://github.com/mcrocks999/curseapp.js/projects">Current work in progress features.</a></p>
+					</div>
+					<div class="column">
+						<h2 class="title is-2">Help</h2>
+						<p>Currently there is no available documentation for curseapp.js, if you need to know more please talk to me or check the source. Additionally, if you encounter any problems or any errors please either join our dev server or add me directly on Twitch, <code>InsertPaulHere</code>.</p>
+						</br>
+						<p>Dev server: <a href="https://invite.twitch.tv/djbMkz">https://invite.twitch.tv/djbMkz</a></p>
+					</div>
+					<div class="column">
+						<h2 class="title is-2">Example</h2>
+						<pre><code>const Curse = require('curseapp.js');
+const app = new Curse.Client();
+
+app.on('connected', () => {
+    console.log(`Connected as ${app.user.name}`);
+});
+
+app.on('dropped', () => {
+    consolle.log('Connection dropped!');
+});
+
+app.on('message', (msg) => {
+    if (msg.content=='ping')
+        msg.reply('pong!');
+});</code></pre>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>
