@@ -16,8 +16,7 @@ module.exports = class Client extends EventEmitter {
 		this._UserID = '';
 		this._Username = '';
 		this._Cache = Cache;
-		this.groups = Cache.groups;
-		this.channels = Cache.channels;
+		this.groups = Cache.Groups;
 	}
 	login(a,b,c) {
 		this._AuthenticationToken = a;

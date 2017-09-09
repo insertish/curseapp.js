@@ -1,12 +1,17 @@
 const Endpoints = require('../objects/Endpoints');
+const Group = require('../objects/Group');
 var Groups = new Map();
-var Channels = new Map();
 module.exports = {
 	Groups,
-	Channels,
 	Sync: (Client) => {
 		return new Promise((resolve, reject) => {
 			Endpoints.Contacts.contacts(Client).then((data) => {
+				for (var i=0;i<data.Groups.length;i++) {
+					var gData = data.Groups[i];
+					var group = new Group(Client, gData.GroupID);
+					group.syncRaw(gData);
+					Groups.set(gData.GroupID, group);
+				}
 				resolve();
 			}).catch(err => {
 				reject(err);
