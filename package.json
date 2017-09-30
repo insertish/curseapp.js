@@ -1,6 +1,6 @@
 {
   "name": "curseapp.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "curseapp.js is a 100% promise based, Object-oriented wrapper for the CurseApp API.",
   "main": "index.js",
   "scripts": {

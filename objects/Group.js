@@ -1,5 +1,4 @@
 const Endpoints = require('./Endpoints');
-const Sync = require('sync');
 module.exports = class Group {
 	constructor(Client, RootConversationID) {
 		this._Client = Client;
