@@ -4,8 +4,16 @@ const Endpoints = require('../objects/Endpoints');
 const Websocket = require('../objects/Websocket');
 const Cache = require('../cache/Cache');
 
+/**
+ * The Client object
+ * @class
+ */
 module.exports = class Client extends EventEmitter {
-	constructor(options = {}) {
+	/**
+	 * Create a client object
+	 * @constructor
+	 */
+	constructor() {
 		super();
 		this._Endpoints = Endpoints;
 		this._Objects = Objects;
@@ -18,12 +26,20 @@ module.exports = class Client extends EventEmitter {
 		this._Cache = Cache;
 		this.groups = Cache.Groups;
 	}
-	login(a,b,c) {
-		this._AuthenticationToken = a;
-		this._ClientID = b;
-		this._MachineKey = c;
-		if (!c) {
-			var Username, Password = a, b;
+	/**
+	 * Login to the curse service
+	 * @function
+	 * @param {string} auth Authentication Token
+	 * @param {string} id CLient ID
+	 * @param {string} key Machine Key
+	 * @returns {void}
+	 */
+	login(auth, id, key) {
+		this._AuthenticationToken = auth;
+		this._ClientID = id;
+		this._MachineKey = key;
+		if (!key) {
+			var Username, Password = auth, id;
 			// TODO: login and set variables above
 		}
 		Endpoints.Sessions.create(this).then((UserID, SessionID) => {

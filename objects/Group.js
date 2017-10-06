@@ -1,10 +1,20 @@
 const Endpoints = require('./Endpoints');
 module.exports = class Group {
+	/**
+	 * Create a group object
+	 * @param {Client} Client parent client
+	 * @param {string} RootConversationID Parent convo
+	 */
 	constructor(Client, RootConversationID) {
 		this._Client = Client;
 		this.id = RootConversationID;
 		this.synced = false;
 	}
+	/**
+	 * N/A
+	 * @param {Function} callback Callback to callback
+	 * @returns {void}
+	 */
 	sync(callback) {
 		if (this.synced) return callback();
 		Endpoints.Groups.groups.get(this._Client, this.id).then(data => {
@@ -14,6 +24,11 @@ module.exports = class Group {
 			console.log(err);
 		});
 	}
+	/**
+	 * N/A
+	 * @param {string} data data
+	 * @returns {void}
+	 */
 	syncRaw(data) {
 		this.synced = true;
 		this.title = data.GroupTitle;
@@ -36,6 +51,10 @@ module.exports = class Group {
 			this.defaultChannel = new this._Client._Objects.Channel(this._Client, this.id, this.id, true);
 		}
 	}
+	/**
+	 * Leave the group
+	 * @returns {Promise<void>}
+	 */
 	leave() {
 		return new Promise((resolve, reject) => {
 			Endpoints.Groups.groups.leave(this._Client, this.id).then(() => {
