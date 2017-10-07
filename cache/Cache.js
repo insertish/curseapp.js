@@ -2,7 +2,13 @@ const Endpoints = require('../objects/Endpoints');
 const Group = require('../objects/Group');
 var Groups = new Map();
 module.exports = {
+	/**
+	 * @type {Map<string, Group>}
+	 */
 	Groups,
+	/**
+	 * @param {Client}
+	 */
 	Sync: (Client) => {
 		return new Promise((resolve, reject) => {
 			Endpoints.Contacts.contacts(Client).then((data) => {

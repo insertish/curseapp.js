@@ -6,6 +6,12 @@ const User = require('./User');
 const Group = require('./Group');
 const GroupMember = require('./GroupMember');
 
+/**
+ * Connect to the endpoint
+ * @param {Client} Client Parent Client
+ * @param {Class} Class this Websocket class
+ * @returns {void}
+ */
 function connect(Client, Class) {
 	const ws = new WebSocket(host);
 	ws.on('open', function () {
@@ -52,6 +58,10 @@ function connect(Client, Class) {
 }
 
 module.exports = class Websocket extends EventEmitter {
+	/**
+	 * Connect to endpoint
+	 * @param {Client} Client Parent Client
+	 */
 	constructor(Client) {
 		super();
 		connect(Client, this);
