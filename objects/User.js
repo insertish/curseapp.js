@@ -1,8 +1,8 @@
 module.exports = class User {
 	/**
 	 * Create a user object 
-	 * @param {Client} Client Parent client
-	 * @param {string | number} Id User ID
+	 * @param {Client} Client Parent Client
+	 * @param {string | number} Id User Id
 	 * @param {string} Name Username
 	 */
 	constructor(Client, Id, Name) {

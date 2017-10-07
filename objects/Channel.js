@@ -3,10 +3,10 @@ const Group = require('./Group');
 module.exports = class Channel {
 	/**
 	 * Create a channel object
-	 * @param {Client} Client Parent client
-	 * @param {string} RootConversationID Parent convrsation id
-	 * @param {string} ConversationID Conversationid
-	 * @param {bool} isDM Is the channel a dm channel
+	 * @param {Client} Client Parent Client
+	 * @param {string} RootConversationID Group Id
+	 * @param {string} ConversationID Channel Id
+	 * @param {bool} isDM Whether the channel is a DM
 	 */
 	constructor(Client, RootConversationID, ConversationID, isDM) {
 		this._Client = Client;

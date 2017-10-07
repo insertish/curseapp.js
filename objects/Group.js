@@ -2,8 +2,8 @@ const Endpoints = require('./Endpoints');
 module.exports = class Group {
 	/**
 	 * Create a group object
-	 * @param {Client} Client parent client
-	 * @param {string} RootConversationID Parent convo
+	 * @param {Client} Client Parent Client
+	 * @param {string} RootConversationID Group Id
 	 */
 	constructor(Client, RootConversationID) {
 		this._Client = Client;

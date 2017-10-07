@@ -8,8 +8,8 @@ const GroupMember = require('./GroupMember');
 
 /**
  * Connect to the endpoint
- * @param {Client} Client 
- * @param {Class} Class 
+ * @param {Client} Client Parent Client
+ * @param {Class} Class this Websocket class
  * @returns {void}
  */
 function connect(Client, Class) {
@@ -60,7 +60,7 @@ function connect(Client, Class) {
 module.exports = class Websocket extends EventEmitter {
 	/**
 	 * Connect to endpoint
-	 * @param {Client} Client 
+	 * @param {Client} Client Parent Client
 	 */
 	constructor(Client) {
 		super();

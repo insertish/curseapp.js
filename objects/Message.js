@@ -5,8 +5,8 @@ const User = require('./User');
 module.exports = class Message {
 	/**
 	 * Create a message object
-	 * @param {Client} Client 
-	 * @param {string} Data 
+	 * @param {Client} Client Parent Client
+	 * @param {string} Data Data relating to message
 	 */
 	constructor(Client, Data) {
 		this._Client = Client;
@@ -21,16 +21,16 @@ module.exports = class Message {
 		this.id = Data.ServerID;
 	}
 	/**
-	 * Synchronise a function with this
-	 * @param {Function} callback callback to call
+	 * Synchronise the channel
+	 * @param {Function} callback Callback after completion
 	 * @returns {void}
 	 */
 	sync(callback) {
 		this.Channel.sync(callback);
 	}
 	/**
-	 * Reply to a message
-	 * @param {string} data 
+	 * Reply to the message
+	 * @param {string} data The message body
 	 * @returns {Promise<void>}
 	 */
 	reply(data) {
@@ -70,7 +70,7 @@ module.exports = class Message {
 	}
 	/**
 	 * Edit the message
-	 * @param {string} new_content 
+	 * @param {string} new_content The content to replace the message with
 	 * @returns {Promise<void>}
 	 */
 	edit(new_content) {

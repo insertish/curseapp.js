@@ -5,7 +5,7 @@ const Websocket = require('../objects/Websocket');
 const Cache = require('../cache/Cache');
 
 /**
- * The Client object
+ * Client Object
  * @class
  */
 module.exports = class Client extends EventEmitter {
@@ -27,10 +27,10 @@ module.exports = class Client extends EventEmitter {
 		this.groups = Cache.Groups;
 	}
 	/**
-	 * Login to the curse service
+	 * Login to CurseApp
 	 * @function
 	 * @param {string} auth Authentication Token
-	 * @param {string} id CLient ID
+	 * @param {string} id Client Id
 	 * @param {string} key Machine Key
 	 * @returns {void}
 	 */

@@ -2,8 +2,8 @@ const Endpoints = require('./Endpoints');
 module.exports = class GroupMember {
 	/**
 	 * Create a group member object
-	 * @param {User} User User the member is
-	 * @param {Group} Group Group the member is in
+	 * @param {User} User User object
+	 * @param {Group} Group Group object
 	 */
 	constructor(User, Group) {
 		this.user = User;
@@ -22,9 +22,9 @@ module.exports = class GroupMember {
 		});
 	}
 	/**
-	 * Ban this user
+	 * Ban this member from this group
 	 * @param {*} reason Ban reason
-	 * @param {*} deleteM
+	 * @param {*} deleteM Whether to delete messages
 	 * @returns {Promise<void>}
 	 */
 	ban(reason, deleteM) {
@@ -37,7 +37,7 @@ module.exports = class GroupMember {
 		});
 	}
 	/**
-	 * Unban this user
+	 * Unban this member from this group
 	 * @returns {Promise<void>}
 	 */
 	unban() {
