@@ -1,5 +1,5 @@
 const Endpoints = require('./Endpoints');
-module.exports = class Group {
+class Group {
 	/**
 	 * Create a group object
 	 * @param {Client} Client Parent Client
@@ -65,3 +65,4 @@ module.exports = class Group {
 		});
 	}
 }
+module.exports = Group;

@@ -1,5 +1,5 @@
 const Endpoints = require('./Endpoints');
-module.exports = class GroupMember {
+class GroupMember {
 	/**
 	 * Create a group member object
 	 * @param {User} User User object
@@ -50,3 +50,4 @@ module.exports = class GroupMember {
 		});
 	}
 }
+module.exports = GroupMember;

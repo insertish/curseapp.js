@@ -8,7 +8,7 @@ const Cache = require('../cache/Cache');
  * Client Object
  * @class
  */
-module.exports = class Client extends EventEmitter {
+class Client extends EventEmitter {
 	/**
 	 * Create a client object
 	 * @constructor
@@ -53,3 +53,4 @@ module.exports = class Client extends EventEmitter {
 		});
 	}
 }
+module.exports = Client;

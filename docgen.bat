@@ -1,0 +1,1 @@
+jsdoc index.js -r . -d ./docs/doc/

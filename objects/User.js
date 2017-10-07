@@ -1,4 +1,4 @@
-module.exports = class User {
+class User {
 	/**
 	 * Create a user object 
 	 * @param {Client} Client Parent Client
@@ -26,3 +26,4 @@ module.exports = class User {
 		});
 	}
 }
+module.exports = User;
