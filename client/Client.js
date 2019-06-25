@@ -25,6 +25,8 @@ class Client extends EventEmitter {
 		this._Username = '';
 		this._Cache = Cache;
 		this.groups = Cache.Groups;
+
+		console.warn('The Curse Messenger platform has shut down, you will not be able to connect.');
 	}
 	/**
 	 * Login to CurseApp
